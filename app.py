@@ -134,9 +134,10 @@ def showIdP(id_data):
 def simpanP():
     judul = request.form['judul']
     isi = request.form['isi']    
+    lokasi = request.form['lokasi']
     cur = mysql.connection.cursor()    
-    sql = "INSERT INTO pengumuman (judul, isi) VALUES (%s, %s)"
-    val = (judul,isi)
+    sql = "INSERT INTO pengumuman (judul, isi, lokasi) VALUES (%s, %s, %s)"
+    val = (judul,isi,lokasi)
     cur.execute(sql, val)
     
     mysql.connection.commit()
@@ -154,8 +155,9 @@ def updateP():
     id_data = request.form['id']
     judul = request.form['judul']
     isi = request.form['isi']    
+    lokasi = request.form['lokasi']
     cur = mysql.connection.cursor()
-    cur.execute("UPDATE pengumuman SET judul=%s,isi=%s WHERE id=%s", (judul,isi,id_data,))
+    cur.execute("UPDATE pengumuman SET judul=%s,isi=%s,lokasi=%s WHERE id=%s", (judul,isi,id_data,lokasi))
     mysql.connection.commit()
     return redirect(url_for('adminP'))
 

@@ -51,7 +51,11 @@
                                 <div class="form-group">      
                                     <label>Isi</label>      
                                     <textarea class="form-control" id="exampleFormControlTextarea1" name="isi" rows="3"></textarea>
-                                </div>                                        
+                                </div>    
+                                <div class="form-group">      
+                                    <label>Lokasi</label>      
+                                    <input id="lokasi" class="form-control" name="lokasi"></input>
+                                </div>                                                                        
                                 <div class="form-group">      
                                     <button class="btn btn-primary " type="submit">Simpan</button>      
                                 </div>      
@@ -85,6 +89,10 @@
                                             <textarea id="isi" class="form-control" id="exampleFormControlTextarea1" name="isi" rows="3"></textarea>
                                         </div>                                        
                                         <div class="form-group">      
+                                            <label>Lokasi</label>      
+                                            <input id="lokasi" class="form-control" name="lokasi" rows="3"></input>
+                                        </div>                                        
+                                        <div class="form-group">      
                                             <button class="btn btn-primary " type="submit">Simpan</button>      
                                         </div>      
                                     </form>
@@ -101,6 +109,7 @@
                     <th style="width: 10px">#</th>
                     <th>Judul</th>
                     <th>Isi</th>
+                    <th>Lokasi</th>
                     <th>Aksi</th>                    
                     </tr>
                 </thead>
@@ -109,7 +118,8 @@
                         <tr>                
                             <td></td>
                             <td>{{d.1}}</td>
-                            <td>{{d.2}}</td>                            
+                            <td>{{d.2}}</td>
+                            <td>{{d.3}}</td>                            
                             <td>
                                 <span href="/show/{{ d.0 }}" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modalEdit{{ d.0 }}">Edit</span>      
                                 <a href="pengumuman/hapus/{{ d.0 }}" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus?')">Hapus</a>      
@@ -145,6 +155,7 @@
                                 $('.update_data #id').val(result.data[0].id);                                
                                 $('.update_data #judul').val(result.data[0].judul);                                
                                 $('.update_data #isi').val(result.data[0].isi);                                                                
+                                $('.update_data #isi').val(result.data[0].lokasi);                                                                
                             }
                         })
                 })
