@@ -2,7 +2,6 @@
 
 {% block title %}Pengumuman{% endblock %}
 
-
 {% block header %} 
 
     <section class="content-header">
@@ -151,11 +150,11 @@
                         .then(response => response.json())
                         .then(result => {
                             if(result.status){
-                                console.log(result.data[0])
+                                console.log(result)
                                 $('.update_data #id').val(result.data[0].id);                                
                                 $('.update_data #judul').val(result.data[0].judul);                                
                                 $('.update_data #isi').val(result.data[0].isi);                                                                
-                                $('.update_data #isi').val(result.data[0].lokasi);                                                                
+                                $('.update_data #lokasi').val(result.data[0].lokasi);                                                                
                             }
                         })
                 })
